@@ -18,11 +18,19 @@ Click the "Predict" button to see the model's prediction.
 
 The application will display a visual representation of the prediction.
 
-Model Training The models were trained on the Heart Failure Prediction dataset
-available on Kaggle. The dataset contains information on 299 patients and 12
-features. The logistic regression model and the random forest classifier were
-trained using Scikit-learn. The accuracy of the models was evaluated using
-cross-validation.
+Flask App The Flask app has a simple user interface that allows users to input
+the following parameters:
+
+Age Anaemia Creatinine Phosphokinase Diabetes Ejection Fraction High Blood
+Pressure Platelets Serum Creatinine Serum Sodium Sex Smoking Time The app uses
+the trained logistic regression and random forest classifier models to predict
+heart failure based on the input parameters. The results are displayed in a
+visual representation that shows the probability of heart failure.
+
+Conclusion This project demonstrates the use of logistic regression and random
+forest classifier models to predict heart failure based on medical data. The
+Flask app provides a user-friendly interface for predicting heart failure and
+rendering the results in a visual representation.
 
 Credits This application was developed by Akinlolu Adeboye. The machine learning
 models were trained using the Heart Failure Prediction dataset available on
