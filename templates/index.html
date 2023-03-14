@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Heart Failure Prediction</title>
+  <style>
+    .btn{
+        border-radius: 13px 4px 15px 4px;
+        margin-top: 30px;
+        width: 200px;
+        height:50px;
+    }
+    .btn:hover{
+        background-color: aqua;
+    }
+    .big {
+        height: 40px;
+        width: 350px;
+    }
+  </style>
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1 style="color:Violet;">Heart Failure prediction</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" name="age" placeholder="age" required="required" class="big"/>
+        <input type="number" name="anaemia" placeholder="anaemia:(0 = no, 1 = yes)" required="required"  class="big"  />
+        <input type="number" name="creatinine_phosphokinase" placeholder="level of the CPK enzyme in the blood (mcg/L)" required="required" class="big"  /><br>
+        <input type="number" name="diabetes" placeholder="the patient has diabetes (0 = no, 1 = yes)" required="required"class="big"  />
+        <input type="number" name="ejection_fraction" placeholder="percentage of blood leaving the heart at each contraction" required="required" class="big"  />
+        <input type="number" name="high_blood_pressure" placeholder="whether the patient has hypertension (0 = no, 1 = yes)" required="required" class="big"  /><br>
+        <input type="number" name="platelets" placeholder="platelets count in the blood (kiloplatelets/mL)" required="required" class="big"  />
+        <input type="number" name="serum_creatinine" placeholder="level of creatinine in the blood (mg/dL)" required="required" class="big" />
+        <input type="number" name="serum_sodium" placeholder="level of sodium in the blood (mEq/L)" required="required" class="big"  /><br>
+        <input type="number" name="sex" placeholder="patient's gender (0 = female, 1 = male)" required="required" class="big"  />
+        <input type="number" name="smoking" placeholder="whether the patient smokes or not (0 = no, 1 = yes)" required="required" class="big"  />
+        <input type="number" name="time" placeholder="follow-up period (days)" required="required" class="big" /><br>
+            <button type="submit" class="btn btn-primary btn-large">Predict Heart Failure</button></p>
+    </form>
+
+   <br>
+   <br>
+   <h4 style="color:Violet;">
+   {{  LGR_prediction_text }} </h4>
+   <h4 style="color:rgb(36, 80, 224);">
+    {{  RAF_prediction_text }} </h4>
+
+ </div>
+
+
+</body>
+</html>
